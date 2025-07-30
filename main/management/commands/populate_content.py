@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = 'Populate the database with content from aktinyhomes.co.nz'
 
     def handle(self, *args, **options):
-        self.stdout.write(self.style.SUCCESS('Populating database with Aktiny Homes content...'))
+        self.stdout.write(self.style.SUCCESS('Populating database with A&K Tinyhomes content...'))
         
         # Clear existing data
         TinyHomeLayout.objects.all().delete()
@@ -203,11 +203,88 @@ class Command(BaseCommand):
                 'layout': None
             },
             {
-                'title': 'A&K Tiny Homes Logo',
+                'title': 'A&K Tinyhomes Logo',
                 'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/AK%20tinyhomessmall%202.png',
-                'description': 'A&K Tiny Homes company logo and branding',
+                'description': 'A&K Tinyhomes company logo and branding',
                 'is_featured': False,
                 'layout': None
+            },
+            {
+                'title': '10m x 3m Single Ensuite Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/1%20bedensuite%2010x3.jpg',
+                'description': '10m x 3m single bedroom with ensuite layout plan',
+                'is_featured': False,
+                'layout': created_layouts[2]  # 10m x 3m layout
+            },
+            {
+                'title': '3 Bed Unit Stacked Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/3%20bed%2C%20stacked.jpg',
+                'description': '3 bed unit layout plan with 1 double/queen bed and 2 stacked singles',
+                'is_featured': False,
+                'layout': created_layouts[2]  # 10m x 3m layout (assuming this is the larger size)
+            },
+            {
+                'title': '8m x 3m Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/8x3.jpg',
+                'description': '8m x 3m custom home layout plan',
+                'is_featured': False,
+                'layout': created_layouts[2]  # Could be custom layout, but using 10m x 3m as closest match
+            },
+            {
+                'title': 'Additional Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/blob-c4c8d64.png',
+                'description': 'Additional tiny home layout plan design',
+                'is_featured': False,
+                'layout': created_layouts[1]  # Using 8m x 2.4m as layout association
+            },
+            {
+                'title': '8m x 3m Salon Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/8x3%20salon.jpg',
+                'description': '8m x 3m salon/studio layout plan for business use',
+                'is_featured': False,
+                'layout': created_layouts[2]  # Using 10m x 3m as closest match
+            },
+            {
+                'title': '10m x 3m Ensuite Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/ensuite%2010x3.jpg',
+                'description': '10m x 3m ensuite layout plan with bathroom facilities',
+                'is_featured': False,
+                'layout': created_layouts[2]  # 10m x 3m layout
+            },
+            {
+                'title': 'Multi Unit Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/multi%201-4442919.jpg',
+                'description': 'Multi-unit layout plan for combined living spaces',
+                'is_featured': False,
+                'layout': created_layouts[3]  # Custom Multi-Unit Build
+            },
+            {
+                'title': 'Compact Layout Plan 11',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/11.jpg',
+                'description': 'Compact layout plan design for efficient space utilization',
+                'is_featured': False,
+                'layout': created_layouts[0]  # Using 6m x 2.4m as smallest layout
+            },
+            {
+                'title': 'Alternative Layout Design',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/blob-97421b4.png',
+                'description': 'Alternative layout design with optimized floor plan',
+                'is_featured': False,
+                'layout': created_layouts[1]  # Using 8m x 2.4m as layout association
+            },
+            {
+                'title': '8m x 2.4m Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/8x2.4.jpg',
+                'description': '8m x 2.4m layout plan with optimized space utilization',
+                'is_featured': False,
+                'layout': created_layouts[1]  # 8m x 2.4m layout
+            },
+            {
+                'title': 'HEATPORT H4 Wood Burner',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/ols/HEATPORT%20h4.jpg',
+                'description': 'HEATPORT H4 wood burning stove for tiny home heating',
+                'is_featured': False,
+                'layout': None  # Shop item, not layout specific
             }
         ]
         
@@ -365,7 +442,7 @@ Contact us to discuss the regulatory requirements for your specific situation an
             faq = FAQ.objects.create(**faq_data)
             self.stdout.write(f'Created FAQ: {faq.question}')
         
-        self.stdout.write(self.style.SUCCESS('Successfully populated database with Aktiny Homes content!'))
+        self.stdout.write(self.style.SUCCESS('Successfully populated database with A&K Tinyhomes content!'))
         self.stdout.write(f'Created {TinyHomeLayout.objects.count()} layouts')
         self.stdout.write(f'Created {TinyHomeImage.objects.count()} images')
         self.stdout.write(f'Created {BlogPost.objects.count()} blog posts')
