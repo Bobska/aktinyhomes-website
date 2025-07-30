@@ -2,7 +2,7 @@ services:
   - type: web
     name: aktinyhomes-website
     env: python
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python manage.py populate_content && python manage.py download_images
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate && python manage.py populate_content && python manage.py download_images && python manage.py create_admin
     startCommand: gunicorn aktinyhomes.wsgi:application
     envVars:
       - key: DEBUG
