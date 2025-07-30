@@ -20,7 +20,7 @@
         <div class="gallery-grid">
             {% for image in featured_images %}
             <div class="gallery-item">
-                <img src="{{ image.image_url }}" alt="{{ image.title }}" loading="lazy">
+                <img src="{{ image.image_src }}" alt="{{ image.title }}" loading="lazy">
                 <div class="image-overlay">
                     <h3>{{ image.title }}</h3>
                     <p>{{ image.description }}</p>

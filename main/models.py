@@ -15,10 +15,20 @@ class TinyHomeImage(models.Model):
     """Model for tiny home images"""
     layout = models.ForeignKey(TinyHomeLayout, on_delete=models.CASCADE, related_name='images', null=True, blank=True)
     title = models.CharField(max_length=100)
-    image_url = models.URLField()
+    image_url = models.URLField(blank=True, null=True)  # For external URLs
+    image_file = models.ImageField(upload_to='tiny_homes/', blank=True, null=True)  # For local files
     description = models.TextField(blank=True)
     is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    @property
+    def image_src(self):
+        """Return the image source - either local file or external URL"""
+        if self.image_file:
+            return self.image_file.url
+        elif self.image_url:
+            return self.image_url
+        return None
     
     def __str__(self):
         return self.title
