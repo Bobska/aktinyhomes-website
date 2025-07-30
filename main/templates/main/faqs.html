@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+
+{% block title %}FAQs - A&K Tiny Homes{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about our tiny homes</p>
+    </div>
+</section>
+
+<section class="faqs-content">
+    <div class="container">
+        {% for faq in faqs %}
+        <div class="faq-item">
+            <h3 class="faq-question">{{ faq.question }}</h3>
+            <div class="faq-answer">
+                {{ faq.answer|linebreaks }}
+            </div>
+        </div>
+        {% empty %}
+        <div class="no-faqs">
+            <h3>Coming Soon!</h3>
+            <p>We're compiling the most frequently asked questions. In the meantime, feel free to contact us directly.</p>
+            <a href="mailto:akmotorhomes@outlook.com" class="cta-button">Contact Us</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.faqs-content {
+    padding: 80px 0;
+}
+
+.faq-item {
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #3498db;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: #2980b9;
+}
+
+.faq-answer {
+    padding: 20px;
+    display: block;
+}
+
+.no-faqs {
+    text-align: center;
+    padding: 60px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}

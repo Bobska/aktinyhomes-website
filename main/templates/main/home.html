@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Affordable Tiny homes to fit you</h1>
+        <h2>Welcome to A&K Tiny Homes</h2>
+        <p>Based in Chertsey, Mid Canterbury, these Unique Tiny homes offer you the opportunity to pick a Layout to fit you.</p>
+        <p>Pick from over 100 different colours and colour combinations.</p>
+        <p>on and off grid options</p>
+        <p>Design your own custom-made Joinery, built for you, non of that flat pack stuff here!.</p>
+        <a href="mailto:akmotorhomes@outlook.com" class="cta-button">CONTACT US</a>
+    </div>
+</section>
+
+<section class="image-gallery">
+    <div class="container">
+        <h2>Our Tiny Homes</h2>
+        <div class="gallery-grid">
+            {% for image in featured_images %}
+            <div class="gallery-item">
+                <img src="{{ image.image_url }}" alt="{{ image.title }}" loading="lazy">
+                <div class="image-overlay">
+                    <h3>{{ image.title }}</h3>
+                    <p>{{ image.description }}</p>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default images from the original website -->
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/300179887_355490866665789_1379202795833700960_.jpg/:/rs=w:1023,h:1364" alt="Tiny Home Interior" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/301047788_1259664138116616_9180614893207849304.jpg" alt="Tiny Home Exterior" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/432308643_312054858330347_1071125971372559768_.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:719,h:959" alt="Tiny Home Layout" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/434414403_1174263284022160_26361300626-1657f42.jpg" alt="Tiny Home Kitchen" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/432381177_3605057843076251_1492047688754276433.jpg/:/rs=w:719,h:959" alt="Tiny Home Bedroom" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/424917009_346762217868543_4201948335848108543_.jpg" alt="Tiny Home Living Area" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/426726688_706807144998405_5676824757491673736_.jpg/:/rs=w:719,h:959" alt="Tiny Home Bathroom" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/301853860_593485355777409_115156915857900386_n.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1023,h:767" alt="Tiny Home Construction" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="layout-options">
+    <div class="container">
+        <h2>Layout and options</h2>
+        <h3>Tiny Home Sizes + Designs.</h3>
+        <p>Choose your size, options and personal touches.</p>
+        
+        <div class="options-grid">
+            <div class="option-card">
+                <h4>Personal Touches.</h4>
+                <p>Optional Extras, personal touches and designs.</p>
+                <a href="{% url 'main:layouts' %}" class="option-link">Learn More</a>
+            </div>
+            
+            <div class="option-card">
+                <h4>Custom Multi Unit Builds.</h4>
+                <p>Coming soon.</p>
+                <a href="{% url 'main:layouts' %}" class="option-link">Learn More</a>
+            </div>
+            
+            <div class="option-card">
+                <h4>Various Alternative Layouts</h4>
+                <p>Checkout our Other Plans and Layout Options.</p>
+                <p>As Each Tiny Home, by A&K Is Unique. Prices are fit to You, the Customer's, Pocket and Requirements.</p>
+                <a href="{% url 'main:layouts' %}" class="option-link">View Layouts</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="select-options">
+    <div class="container">
+        <h2>Select your Tiny Home options</h2>
+        <div class="selection-content">
+            <div class="selection-images">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/432308643_312054858330347_1071125971372559768_.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Option 1">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/434414403_1174263284022160_26361300626-1657f42.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Option 2">
+                <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/432381177_3605057843076251_1492047688754276433.jpg/:/rs=w:70,h:70,cg:true,m/cr=w:70,h:70,a:cc" alt="Option 3">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="on-the-job">
+    <div class="container">
+        <h2>On the Job!</h2>
+        <div class="job-images">
+            <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/301294499_788485135727789_7414411508054733049_.jpg/:/rs=w:1023,h:1371" alt="Construction in Progress" loading="lazy">
+            <img src="https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/300324635_2399096630231715_7414243277109508740.jpg/:/rs=w:1023,h:1364" alt="Workshop Scene" loading="lazy">
+        </div>
+    </div>
+</section>
+{% endblock %}

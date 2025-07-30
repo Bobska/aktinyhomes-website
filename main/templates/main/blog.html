@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Blog - A&K Tiny Homes{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Our Blog</h1>
+        <p>Stay updated with the latest news and insights from A&K Tiny Homes</p>
+    </div>
+</section>
+
+<section class="blog-content">
+    <div class="container">
+        {% for post in posts %}
+        <article class="blog-post">
+            <h2>{{ post.title }}</h2>
+            <p class="post-date">{{ post.created_at|date:"F d, Y" }}</p>
+            <div class="post-content">
+                {{ post.content|linebreaks }}
+            </div>
+        </article>
+        {% empty %}
+        <div class="no-posts">
+            <h3>Coming Soon!</h3>
+            <p>We're working on bringing you the latest updates about tiny homes. Check back soon!</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+.blog-content {
+    padding: 80px 0;
+}
+
+.blog-post {
+    background: white;
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.blog-post h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.post-date {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 60px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+</style>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Red Tape - A&K Tiny Homes{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+    <div class="container">
+        <h1>Red Tape & Regulations</h1>
+        <p>Important information about tiny home regulations and requirements</p>
+    </div>
+</section>
+
+<section class="content-page">
+    <div class="container">
+        <div class="content-card">
+            <h2>Building Regulations</h2>
+            <p>Understanding the building codes and regulations for tiny homes in New Zealand is crucial for a successful project. We help guide you through the process.</p>
+            
+            <h2>Council Requirements</h2>
+            <p>Each council may have different requirements for tiny homes. We work with you to ensure compliance with your local council's specifications.</p>
+            
+            <h2>Certification Process</h2>
+            <p>Our tiny homes can be built to meet New Zealand Building Code standards. We provide all necessary documentation for certification.</p>
+            
+            <p><strong>For specific regulatory questions, please contact us directly.</strong></p>
+            <a href="mailto:akmotorhomes@outlook.com" class="cta-button">Contact Us for Guidance</a>
+        </div>
+    </div>
+</section>
+
+<style>
+.content-page {
+    padding: 80px 0;
+}
+
+.content-card {
+    background: white;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content-card h2 {
+    color: #2c3e50;
+    margin: 30px 0 15px 0;
+}
+
+.content-card h2:first-child {
+    margin-top: 0;
+}
+
+.content-card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+</style>
+{% endblock %}
