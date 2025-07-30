@@ -50,6 +50,7 @@ class Command(BaseCommand):
         
         # Create Featured Images from the website
         images = [
+            # Main gallery images
             {
                 'title': 'Tiny Home Interior - Open Plan Living',
                 'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/300179887_355490866665789_1379202795833700960_.jpg/:/rs=w:1023,h:1364',
@@ -119,6 +120,94 @@ class Command(BaseCommand):
                 'description': 'Large-scale construction project showing our capability for multi-unit builds',
                 'is_featured': True,
                 'layout': created_layouts[3]
+            },
+            
+            # Additional images from home page thumbnails
+            {
+                'title': 'Tiny Home Setup and Installation',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/420189826_439633745096970_6903613797054221375_.jpg',
+                'description': 'Professional setup and installation of tiny home on site',
+                'is_featured': False,
+                'layout': None
+            },
+            {
+                'title': 'Modern Interior Design',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/434236665_1131152968130229_3729752222829895916.jpg',
+                'description': 'Contemporary interior design with modern fixtures and fittings',
+                'is_featured': False,
+                'layout': created_layouts[1]
+            },
+            {
+                'title': 'Construction Detail Work',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/428198038_822118059750165_2458880442904681252_.jpg',
+                'description': 'Detailed construction work showing quality craftsmanship',
+                'is_featured': False,
+                'layout': None
+            },
+            {
+                'title': 'Bedroom Layout Alternative',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/434414403_1174263284022160_2636130062616546354.jpg',
+                'description': 'Alternative bedroom layout option with different configuration',
+                'is_featured': False,
+                'layout': created_layouts[0]
+            },
+            {
+                'title': 'Custom Built Features',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/432537228_1344668992890543_1335668308347025236.jpg',
+                'description': 'Custom built features and personalized touches',
+                'is_featured': False,
+                'layout': created_layouts[2]
+            },
+            {
+                'title': 'On-Site Construction Photo',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/ols/IMG-20230325-WA0002.jpg',
+                'description': 'On-site construction progress photo',
+                'is_featured': False,
+                'layout': None
+            },
+            
+            # Layout page specific images
+            {
+                'title': 'Single 8m Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/Single%208m.jpg',
+                'description': '8m x 2.4m single bedroom layout plan',
+                'is_featured': False,
+                'layout': created_layouts[0]
+            },
+            {
+                'title': 'Twin Bedroom Layout Plan',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/layout.jpg',
+                'description': '10m x 2.8m twin bedroom layout plan',
+                'is_featured': False,
+                'layout': created_layouts[1]
+            },
+            {
+                'title': 'Interior Design Options',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/interior1-0001.jpg',
+                'description': 'Optional interior design and personal touches',
+                'is_featured': False,
+                'layout': None
+            },
+            {
+                'title': 'Delivery Truck Service',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/ontheroad.jpg',
+                'description': 'Professional delivery service truck for nationwide delivery',
+                'is_featured': False,
+                'layout': None
+            },
+            {
+                'title': 'Alternative Use Interior',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/interior6.jpg',
+                'description': 'Interior setup for alternative uses like salons or workspaces',
+                'is_featured': False,
+                'layout': None
+            },
+            {
+                'title': 'A&K Tiny Homes Logo',
+                'image_url': 'https://img1.wsimg.com/isteam/ip/4327e722-b4f0-4d30-8fb1-391b0572724e/AK%20tinyhomessmall%202.png',
+                'description': 'A&K Tiny Homes company logo and branding',
+                'is_featured': False,
+                'layout': None
             }
         ]
         
